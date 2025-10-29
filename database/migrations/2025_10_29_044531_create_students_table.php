@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('avatar_url')->nullable();
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes();//мягкое удаление
         });
     }
 
