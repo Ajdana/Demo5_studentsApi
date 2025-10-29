@@ -10,6 +10,7 @@ class Student extends Model
 {
     use HasFactory, SoftDeletes;
 
+    //калонки разрешенные к заполнению
     protected $fillable = [
         'name',
         'email',

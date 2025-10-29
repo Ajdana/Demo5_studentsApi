@@ -14,6 +14,7 @@ class StudentFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    //здесь как раз таки и создаются рандомные ытуденты с помощью faker
     public function definition(): array
     {
         return [

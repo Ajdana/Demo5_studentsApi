@@ -16,9 +16,9 @@ return [
     */
 
     'paths' => ['api/*', 'sanctum/csrf-cookie'],
-
+    //разрешеные методы
     'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-
+    //откуда можно обращатся к Апи
     'allowed_origins' => [
         'http://localhost:3000',
         'http://localhost:5173',
@@ -26,7 +26,7 @@ return [
     ],
 
     'allowed_origins_patterns' => [],
-
+    //HTTP-заголовки которые разрешено передавать при запросе
     'allowed_headers' => ['Content-Type', 'Authorization', 'X-Requested-With'],
 
     'exposed_headers' => [],

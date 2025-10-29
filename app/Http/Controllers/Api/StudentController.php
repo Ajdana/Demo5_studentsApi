@@ -14,6 +14,7 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      */
+    // Получить список всех студентов
     public function index()
     {
         try {
@@ -28,6 +29,7 @@ class StudentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // Создать нового студента
     public function store(Request $request)
     {
         try {
@@ -59,6 +61,7 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
+    // Показать конкретного студента
     public function show(string $id)
     {
         try {
@@ -78,6 +81,7 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    // Обновить данные студента
     public function update(Request $request, string $id)
     {
         try {
@@ -112,6 +116,7 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    // Удалить студента
     public function destroy(string $id)
     {
         try {
