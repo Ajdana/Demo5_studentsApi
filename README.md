@@ -151,6 +151,19 @@ DB_PASSWORD=
 
 ---
 
+## 🗃️ Database Schema
+
+| Column       | Type     | Description                 |
+|---------------|----------|-----------------------------|
+| id            | integer  | Primary key (auto increment)|
+| full_name     | string   | Student's full name         |
+| course        | string   | Course name (optional)      |
+| specialty     | string   | Student's specialty (optional) |
+| bio           | text     | Short biography (optional)  |
+| created_at    | datetime | Record creation date        |
+| updated_at    | datetime | Record update date          |
+
+
 ## 🗃 Database Setup
 
 * 📁 **Migration:** `database/migrations/xxxx_xx_xx_create_students_table.php`
