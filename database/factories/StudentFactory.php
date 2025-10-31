@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -15,6 +16,7 @@ class StudentFactory extends Factory
      * @return array<string, mixed>
      */
     //здесь как раз таки и создаются рандомные ытуденты с помощью faker
+    protected $model = Student::class;
     public function definition(): array
     {
         return [

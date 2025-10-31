@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreStudentRequest;
 use App\Models\Student;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Log;
@@ -30,32 +31,10 @@ class StudentController extends Controller
      * Store a newly created resource in storage.
      */
     // Создать нового студента
-    public function store(Request $request)
+    public function store(StoreStudentRequest $request)
     {
-        try {
-            $data = $request->validate([
-                'name'       => 'required|string|min:2|max:255',
-                'age'        => 'required|integer|between:16,100',
-                'group'      => 'required|string|max:50',
-                'email'      => 'required|email|unique:students,email',
-                'avatar_url' => 'nullable|url',
-            ]);
-
-            $student = Student::create($data);
-
-            return response()->json($student, Response::HTTP_CREATED);
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            return response()->json([
-                'message' => 'Validation failed',
-                'errors' => $e->errors(),
-            ], Response::HTTP_BAD_REQUEST);
-        } catch (QueryException $e) {
-            Log::error('Database error: ' . $e->getMessage());
-            return response()->json(['message' => 'Database error'], Response::HTTP_INTERNAL_SERVER_ERROR);
-        } catch (Exception $e) {
-            Log::error('Unexpected error: ' . $e->getMessage());
-            return response()->json(['message' => 'Server error'], Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
+        $student = Student::create($request->validated());
+        return response()->json($student, 201);
     }
 
     /**

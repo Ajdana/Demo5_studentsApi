@@ -13,7 +13,9 @@ class Student extends Model
     //калонки разрешенные к заполнению
     protected $fillable = [
         'name',
-        'email',
         'age',
+        'group',
+        'email',
+        'avatar_url',
     ];
 }
